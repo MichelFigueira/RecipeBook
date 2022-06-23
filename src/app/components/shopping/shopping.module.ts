@@ -13,6 +13,9 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ShoppingComponent
   ]
 })
 export class ShoppingModule { }
