@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ShoppingComponent } from './shopping.component';
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     ShoppingListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     ShoppingComponent
