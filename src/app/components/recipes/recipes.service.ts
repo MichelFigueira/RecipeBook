@@ -10,29 +10,14 @@ import { Recipe } from './recipes.model';
 })
 export class RecipesService {
   recipesChanged = new Subject<Recipe[]>();
-
-  private recipes: Recipe[] = [
-    new Recipe(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://reciperie.com/wp-content/uploads/2021/11/Buckstop-West-End-Sean-Neild-Vancouver-1200x675.jpg',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('Egg', 4)
-      ]
-    ),
-    new Recipe(
-      'A Other Recipe',
-      'This is simply a test',
-      'https://reciperie.com/wp-content/uploads/2021/11/Buckstop-West-End-Sean-Neild-Vancouver-1200x675.jpg',
-      [
-        new Ingredient('Buns', 2),
-        new Ingredient('Meat', 9)
-      ]
-    )
-  ];
+  private recipes: Recipe[] = [];
 
   constructor(private shoppingService: ShoppingService) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
