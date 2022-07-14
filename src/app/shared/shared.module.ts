@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { DropdownDirective } from './directives/dropdown.directive';
-import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { PlaceholderDirective } from './directives/placeholder.directive';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
     DropdownDirective,
-    LoadingSpinnerComponent
+    PlaceholderDirective,
+    HeaderComponent,
+    LoadingSpinnerComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,12 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
   exports: [
     HeaderComponent,
     DropdownDirective,
-    LoadingSpinnerComponent
+    PlaceholderDirective,
+    LoadingSpinnerComponent,
+    AlertComponent
+  ],
+  entryComponents: [
+    AlertComponent
   ]
 })
 export class SharedModule { }
