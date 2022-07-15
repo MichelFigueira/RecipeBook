@@ -22,8 +22,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    ShoppingModule,
-    RecipesModule
+    ShoppingModule
   ],
   providers: [
     {
