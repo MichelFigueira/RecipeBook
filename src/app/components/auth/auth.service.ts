@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 
+import { environment } from 'src/environments/environment';
 import { User } from 'src/app/shared/models/user.model';
 import { Router } from '@angular/router';
 
@@ -15,8 +16,8 @@ export interface AuthResponseData {
   registered?: boolean;
 }
 
-const API_SIGNUP = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDTiTE7oFxXPeaWYG7LnlGSyN9667-9u-A'
-const API_SIGNIN = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDTiTE7oFxXPeaWYG7LnlGSyN9667-9u-A'
+const API_SIGNUP = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIKey
+const API_SIGNIN = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey
 
 @Injectable({
   providedIn: 'root'
