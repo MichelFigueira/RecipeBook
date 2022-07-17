@@ -30,8 +30,6 @@ import { RecipesRoutingModule } from './recipes-routing.module';
     RouterModule,
     RecipesRoutingModule
   ],
-  providers: [
-    RecipesService
-  ]
+  providers: []
 })
 export class RecipesModule { }
