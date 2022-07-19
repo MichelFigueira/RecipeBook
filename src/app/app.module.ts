@@ -17,7 +17,7 @@ import { SharedModule } from './shared/shared.module';
     AuthComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     SharedModule,
     FormsModule,
