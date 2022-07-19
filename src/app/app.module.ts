@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { AuthInterceptorService } from './components/auth/auth-interceptor.service';
 import { AuthComponent } from './components/auth/auth.component';
 import { AuthEffects } from './components/auth/store/auth.effects';
+import { RecipesEffects } from './components/recipes/store/recipe.effects';
 import { ShoppingModule } from './components/shopping/shopping.module';
 import { SharedModule } from './shared/shared.module';
 import * as fromApp from './store/app.reducer'
@@ -30,7 +31,7 @@ import * as fromApp from './store/app.reducer'
     ReactiveFormsModule,
     ShoppingModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipesEffects]),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     StoreRouterConnectingModule.forRoot()
   ],
